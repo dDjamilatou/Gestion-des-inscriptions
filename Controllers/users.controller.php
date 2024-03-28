@@ -45,6 +45,7 @@ if (isset($_REQUEST["action"])) {
     }
     elseif($_REQUEST["action"] == "Moduleprof"){
         $ModuleEnseignerByprof= ModuleEnseignerByprof($_REQUEST["id"]);
+        
         LoadView("module.html.php", ["ModuleEnseignerByprof"=>$ModuleEnseignerByprof]);
     }
     elseif($_REQUEST["action"] == "Classeprof"){
