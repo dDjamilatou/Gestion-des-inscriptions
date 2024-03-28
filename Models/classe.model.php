@@ -5,6 +5,7 @@ function FindAllclasse():array|null{
          FROM `classe` c,`niveau` n,`filiere` f
          WHERE c.`id_fil`=f.`id_fil` AND c.`id_niv`=n.`id_niv`";
     $data=null;
+    
     //Classe PDO
      //1-Connexion SGBD et Selectionner la BD
        $servername = 'localhost';
