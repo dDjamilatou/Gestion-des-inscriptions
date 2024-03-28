@@ -1,0 +1,173 @@
+{
+    "Role":[
+        {
+            "id_role":1,
+            "nom_role": "Etudiant"
+        },
+        {
+            "id_role":2,
+            "nom_role": "Attache"
+        },
+        {
+            "id_role":3,
+            "nom_role": "RP"
+        }
+    ],
+    
+    
+    "Users": [
+        {
+            "id_user": 1,
+            "nom": "Diop",
+            "prenom": "Fatou",
+            "login": "@Fatou",
+            "mdp": "Fatou123",
+            "id_Classe": 1,
+            "id_role":1,
+            "matricule": "MJN123",
+            "genre": "Féminin",
+            "adresse": "Dakar"
+        },
+        {
+            "id_user": 2,
+            "nom": "Fall",
+            "prenom": "Modou",
+            "login": "@Modou",
+            "mdp": "Modou123",
+            "id_Classe": "",
+            "id_role":2,
+            "matricule": "",
+            "genre": "Masculin",
+            "adresse": "Dakar"
+        },
+        {
+            "id_user": 3,
+            "nom": "Diallo",
+            "prenom": "Mamoudou",
+            "login": "@Mamoudou",
+            "mdp": "Mamoudou123",
+            "id_Classe": 2,
+            "id_role":1,
+            "matricule": "FVN123",
+            "genre": "Masculin",
+            "adresse": "Dakar"
+
+        },
+        {
+            "id_user": 4,
+            "nom": "Gueye",
+            "prenom": "Babacar",
+            "login": "@ABabacar",
+            "mdp": "Babacar123",
+            "id_Classe": "",
+            "id_role":3,
+            "matricule": "",
+            "genre": "Masculin",
+            "adresse": "Dakar"
+
+        }
+    ],
+
+    "Classes": [
+        {
+            "id_classe": 1,
+            "libelle": "L1 Dev Web",
+            "niveau": "L1",
+            "filiere": "Dev Web"
+        },
+        {
+            "id_classe": 2,
+            "libelle": "L2 Dev Web",
+            "niveau": "L2",
+            "filiere": "Dev Web"
+        },
+        {
+            "id_classe": 3,
+            "libelle": "L2 Design",
+            "niveau": "L2",
+            "filiere": "Design"
+        }
+       
+    ],
+
+    "Etat_demande":[
+        {
+            "id_etat_D":1,
+            "nom_etat_D":"Demande refusée"
+        },
+        {
+            "id_etat_D":2,
+            "nom_etat_D":"Demande acceptée"
+        }
+    ],
+
+    "Inscription":[
+        {
+            "id_inscription":1.1, 
+            "Date_inscription":"20/10/2022",
+            "id_user":1, 
+            "id_annee_scolaire":"2022-2023"
+        },
+        {
+            "id_inscription":3.1, 
+            "Date_inscription":"20/11/2022",
+            "id_user":3, 
+            "id_annee_scolaire":"2022-2023"
+        },
+        {
+            "id_inscription":1.2, 
+            "Date_inscription":"20/10/2023",
+            "id_user":1, 
+            "id_annee_scolaire":"2023-2024"
+        },
+        {
+            "id_inscription":3.2, 
+            "Date_inscription":"20/10/2023",
+            "id_user":3, 
+            "id_annee_scolaire":"2022-2023"
+        }
+    ],
+
+    "Demandes": [
+        {
+            "id_D": 1,
+            "date_D": "10/11/2023",
+            "motif_D": "Voyage",
+            "id_etat_D": 1,
+            "id_inscription": 1
+        },
+        {
+            "id_D": 2,
+            "date_D": "10/11/2023",
+            "motif_D": "Visite médicale",
+            "id_etat_D": 2,
+            "id_inscription": 1
+            
+        },
+        {
+            "id_D": 3,
+            "date_D": "10/11/2023",
+            "motif_D": "Voyage",
+            "id_etat_D": 1,
+            "id_inscription": 2
+            
+        },
+        {
+            "id_D": 4,
+            "date_D": "10/11/2023",
+            "motif_D": "Visite médicale",
+            "id_etat_D": 2,
+            "id_inscription": 4
+            
+        },
+        {
+            "id_D": 5,
+            "date_D": "10/11/2023",
+            "motif_D": "Voyage",
+            "etat_D": "Demande refusée",
+            "id_inscription": 3
+           
+        }
+        
+    ]
+}
