@@ -15,9 +15,6 @@ if (isset($_REQUEST["action"])) {
         $Effectifs=FindEffectifsClasse();
         LoadView("Accueil.html.php", ["Effectifs"=>$Effectifs]);
     }
-    elseif($_REQUEST["action"]=="deconnexion"){
-        require_once("../Views/layout/connexion.layout.php");
-    }
     elseif($_REQUEST["action"]=="mesDemandes"){
         $MesDemandes=ShowDemande($_SESSION["Connexion"]["id_user"]);
         LoadView("listedemande.html.php", ["MesDemandes"=>$MesDemandes]);
@@ -53,6 +50,9 @@ if (isset($_REQUEST["action"])) {
     elseif($_REQUEST["action"] == "Classeprof"){
         $ClasseEnseignerByprof= ClasseEnseignerByprof($_REQUEST["id"]);
         LoadView("classe.html.php", ["ClasseEnseignerByprof"=>$ClasseEnseignerByprof]);
+    }
+    elseif($_REQUEST["action"]=="deconnexion"){
+        require_once("../Views/layout/connexion.layout.php");
     }
 }else {
     require_once("../Views/layout/connexion.layout.php");

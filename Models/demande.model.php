@@ -37,6 +37,7 @@ function ShowDemande($idEtudiant):array|null{
       foreach($demandes as $demande){
               if($demande["id_user"]==$idEtudiant){
                   $Mesdemandes[]=$demande;
+                  
               }
       }
 
