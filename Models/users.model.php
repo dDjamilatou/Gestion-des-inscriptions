@@ -91,7 +91,7 @@ function FindAllEtudiant(){
         foreach($users as $user){
                 if($user["login"]==$login && $user["mdp"]==$mdp){
                         return $user;
-                        
+
                 }
         }
         return null;
