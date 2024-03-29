@@ -3,7 +3,12 @@ if(!isset($_GET["Pos_page"])){
     $page=1;
 }else{$page=$_GET["Pos_page"];}
 $taille=count($classes);
-$nombre_ligne=4;
+if ($_SESSION["Connexion"]["nom_role"]=="RP"){
+    $nombre_ligne=4;
+}
+if ($_SESSION["Connexion"]["nom_role"]=="Attaché"){
+    $nombre_ligne=3;
+}
 $nombre_page=ceil($taille/$nombre_ligne);
 // $page=$_GET["Pos_page"];
 $position=($page-1)*$nombre_ligne;
@@ -13,22 +18,34 @@ $tab=array_slice($classes, $position, $nombre_ligne);
     <div class="box3C">
         <div class="form_title">
             <h2>Liste des classes</h2>
+            <?php if ($_SESSION["Connexion"]["nom_role"]=="RP") : ?>
             <a href="formajoutclass.html"><button class="butt"><h3>Ajouter</h3></button></a>
+            <?php endif;?>
         <div class="tab">
             <table>
                 <thead>
                     <tr>
-                        <th>Libellé</th>
+                        <th>Classe</th>
+                        <?php if ($_SESSION["Connexion"]["nom_role"]=="RP") : ?>
                         <th>Filiére</th>
                         <th>Niveau</th>
+                        <?php endif; ?>
+                        <?php if ($_SESSION["Connexion"]["nom_role"]=="Attaché") : ?>
+                        <th>Details</th>
+                        <?php endif; ?>
                     </tr>
                 </thead>
                 <?php foreach($tab as  $value): ?>
                     <tbody>
                         <tr>
                             <td><?= $value["libelle"]?></td>
+                            <?php if ($_SESSION["Connexion"]["nom_role"]=="RP") : ?>
                             <td><?= $value["nom_fil"]?></td>
                             <td><?= $value["nom_niv"]?></td>
+                            <?php endif; ?>
+                            <?php if ($_SESSION["Connexion"]["nom_role"]=="Attaché") : ?>
+                            <td><a href="<?=WEBROOT;?>/?controller=user_connect&action=listEtudiant&id=<?=$value["id_classe"]?>"><button class="but">Listes etudiants</button></a> </td>
+                            <?php endif; ?>
                         </tr>
                       </tbody>
                 <?php endforeach; ?>

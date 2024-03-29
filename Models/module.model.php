@@ -34,7 +34,6 @@ function FindAllmodule():array|null{
     FROM `enseigner`e,`users`u,`module`m WHERE e.`id_user`=u.`id_user` 
     AND e.`id_module`=m.`id_module` AND u.`id_user`=$id_prof ";
     $data=null;
-    
     //Classe PDO
      //1-Connexion SGBD et Selectionner la BD
        $servername = 'localhost';

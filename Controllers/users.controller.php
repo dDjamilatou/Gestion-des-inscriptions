@@ -45,12 +45,17 @@ if (isset($_REQUEST["action"])) {
     }
     elseif($_REQUEST["action"] == "Moduleprof"){
         $ModuleEnseignerByprof= ModuleEnseignerByprof($_REQUEST["id"]);
-        
+
         LoadView("module.html.php", ["ModuleEnseignerByprof"=>$ModuleEnseignerByprof]);
     }
     elseif($_REQUEST["action"] == "Classeprof"){
         $ClasseEnseignerByprof= ClasseEnseignerByprof($_REQUEST["id"]);
         LoadView("classe.html.php", ["ClasseEnseignerByprof"=>$ClasseEnseignerByprof]);
+    }
+    elseif($_REQUEST["action"] == "listEtudiant"){
+        $listEtudiant=ListEtudiantByidclasse($_REQUEST["id"]);
+        
+        LoadView("listeEtudiant.html.php", ["listEtudiant"=>$listEtudiant]);
     }
     elseif($_REQUEST["action"]=="deconnexion"){
         require_once("../Views/layout/connexion.layout.php");

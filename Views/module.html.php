@@ -12,7 +12,12 @@ $tab=array_slice( $ModuleEnseignerByprof, $position, $nombre_ligne);
 ?>
     <div class="box3C">
         <div class="form_title">
-            <h2></h2>
+           <h2>Liste des modules enseignés par le professeur:
+            
+                <?php foreach( $ModuleEnseignerByprof as  $value):?> 
+                    <?= $value["prenom"]." ". $value["nom"]?> 
+                <?php endforeach; ?>
+            </h2>
         <div class="tab">
             <table>
                 <thead>
