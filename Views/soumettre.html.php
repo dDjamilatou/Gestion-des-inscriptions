@@ -1,21 +1,30 @@
-<div class="box">
+<?php
+         if(isset($_SESSION['errors'])){
+            $errors=$_SESSION['errors'];
+            unset($_SESSION['errors']);
+            
+        }
+?>   
+       
+
+<div class="box3C">
         <div class="form_title">
             <p>Soumettre une demande</p>
-            <form action="">
-                <!-- <div> -->
+            <form method="post" action="<?=WEBROOT?>">
+                <div>
                     <label for="">Motif</label><br>
-                    <input type="text" style="height: 120px;"><br>
-                <!-- </div>
-                <div> -->
+                    <textarea type="text" name="motif" class="put"></textarea><br>
+                    <div class="text-danger"><?= isset($errors['motif'])?$errors['motif']:""; ?></div>
+                </div>
+                <div> 
                     <label for="">Date</label><br>
-                    <input type="date"><br>
-                   
-                <!-- </div>
-              <div> -->
-                   
-              <!-- </div> -->
-      
-               <a href="listeDemande.html"> <input type="button" value="Envoyer"></a>
+                    <input type="date" name="date"><br>
+                    <div class="text-danger"><?= isset($errors['date'])?$errors['date']:""; ?></div>
+                </div>
+        
+              <input type="hidden" name="controller" value="user_connect">
+              <button class="butt" type="submit" name="action" value="add-demande">Enregister</button>
+        
             </form>
         </div>
         

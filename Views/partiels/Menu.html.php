@@ -16,7 +16,7 @@
             <?php endif;?>
             <?php if ($_SESSION["Connexion"]["nom_role"]=="RP") : ?>
                 <li><a href="<?=WEBROOT;?>/?controller=user_connect&action=prof">Professeurs</a></li>
-                <li><a href="<?=WEBROOT;?>/?controller=user_connect&action=mesDemandes">Demandes</a></li>
+                <li><a href="<?=WEBROOT;?>/?controller=user_connect&action=Demandes">Demandes</a></li>
             <?php endif;?>
             <?php if ($_SESSION["Connexion"]["nom_role"]=="Attaché") : ?>
             <li><a href="inscrire.html">Inscription</a></li>
@@ -25,7 +25,7 @@
             <?php endif;?>
             <?php if ($_SESSION["Connexion"]["nom_role"]=="ETUDIANT") : ?>
                 <li><a href="<?=WEBROOT;?>/?controller=user_connect&action=mesDemandes">Mes demandes</a></li>
-                <li><a href="soumettre.html">Soumettre<br>une demande</a></li> 
+                <li><a href="<?=WEBROOT;?>/?controller=user_connect&action=soumettre">Soumettre<br>une demande</a></li> 
             <?php endif;?>
             <li class="Deconnexion"><a href="<?=WEBROOT;?>/?controller=user_connect&action=deconnexion">Deconnexion</a></li>
         </ul>

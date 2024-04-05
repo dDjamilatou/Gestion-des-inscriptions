@@ -9,3 +9,4 @@ require_once(ROOT."/Models/role.model.php");
 require_once(ROOT."/Models/module.model.php");
 require_once(ROOT."/Models/demande.model.php");
 require_once(ROOT."/Models/classe.model.php");
+require_once(ROOT."/Models/annee.model.php");

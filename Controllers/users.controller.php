@@ -16,9 +16,20 @@ if (isset($_REQUEST["action"])) {
         LoadView("Accueil.html.php", ["Effectifs"=>$Effectifs]);
     }
     elseif($_REQUEST["action"]=="mesDemandes"){
-        $MesDemandes=ShowDemande($_SESSION["Connexion"]["id_user"]);
-        LoadView("listedemande.html.php", ["MesDemandes"=>$MesDemandes]);
+        $etat=isset($_REQUEST["etat"])? $_REQUEST["etat"]:"All";
+        $_SESSION["etat"]=$etat;
+        $MesDemandes= DemandeAnneeEncours($_SESSION["Connexion"]["id_user"], $etat);
+        LoadView("listedemande.html.php", 
+        [
+            "MesDemandes"=>$MesDemandes, 
+            "etats"=>FindEtatDemande(),
+            "annees"=>anneescolaire()
+        ]);
     }
+    // elseif($_REQUEST["action"]=="Demandes"){
+    //     $Demandes=DemandeAnneeEncours();
+    //     LoadView("listedemande.html.php", ["Demandes"=>$Demandes]);
+    // }
     elseif($_REQUEST["action"]=="eff4"){
         $EffectifsPartype=FindEffectifsSuspenduAnnule();
         LoadView("eff4.html.php", ["EffectifsPartype"=> $EffectifsPartype]);
@@ -56,6 +67,15 @@ if (isset($_REQUEST["action"])) {
         $listEtudiant=ListEtudiantByidclasse($_REQUEST["id"]);
         
         LoadView("listeEtudiant.html.php", ["listEtudiant"=>$listEtudiant]);
+    }
+    elseif ($_REQUEST["action"] == "soumettre"){
+        LoadView("soumettre.html.php");
+    }
+    elseif ($_REQUEST["action"] == "add-demande") {
+        // $errors = [];
+        // obligatoire("motif", $_POST["motif"], $errors);
+        // obligatoire("date", $_POST["date"], $errors, "La date est obligatoire");
+        // header("location:" . WEBROOT . "/?controller=client&action=mesDemandes");
     }
     elseif($_REQUEST["action"]=="deconnexion"){
         require_once("../Views/layout/connexion.layout.php");

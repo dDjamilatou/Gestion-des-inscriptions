@@ -315,11 +315,12 @@ body{
 .forme3_title h2{
     width: 50%;
     height: 50%;
-    color: rgb(141, 138, 138);
+    color: #B665DD;
+    /* color: rgb(141, 138, 138); */
     cursor: pointer;
     /* background-color: #A85A5A; */
      margin-top: 6%;
-     margin-left: -11%;
+     margin-left: -2%;
     /* margin-bottom: 3%; */
 }
 .forme11{
@@ -503,6 +504,21 @@ tr:nth-child(even){
     cursor: pointer;
     
 }
+.butte{
+    /* width: 90px;
+    height: 40px; */
+    margin-top: 1rem;
+    border: 1.5px solid #aa9caf;
+    background-color:#B665DD;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.7rem;
+    /* margin-left: 89%; */
+    /* box-shadow: 8px 8px 20px rgb(149, 148, 148); */
+    cursor: pointer;
+}
 .form_title h2{
     color: #9865B0;
     cursor: pointer;
@@ -530,7 +546,8 @@ tbody{
 td{
     padding: 15px;
     font-size: 15px;
-    color: #B665DD;;
+    color: #B665DD;
+    cursor: pointer;
 }
 tr:nth-child(even){
     background: rgba(236, 229, 242, 0.502);
@@ -741,4 +758,17 @@ tr:nth-child(even){
         border: 1.5px solid #ddd;
     }
        
-        
+    textarea{
+        background: #F0EFEF;
+        border: none;
+        padding: 0.9rem;
+        width: 100%;
+        border: 1px solid #F0EFEF;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px -6px rgba(0, 0, 0, .2);
+        margin-bottom: 1px;
+        margin-top: 5px;
+    }
+    .put{
+        height: 160px;
+    }

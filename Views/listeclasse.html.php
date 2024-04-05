@@ -44,7 +44,7 @@ $tab=array_slice($classes, $position, $nombre_ligne);
                             <td><?= $value["nom_niv"]?></td>
                             <?php endif; ?>
                             <?php if ($_SESSION["Connexion"]["nom_role"]=="Attaché") : ?>
-                            <td><a href="<?=WEBROOT;?>/?controller=user_connect&action=listEtudiant&id=<?=$value["id_classe"]?>"><button class="but">Listes etudiants</button></a> </td>
+                            <td><a href="<?=WEBROOT;?>/?controller=user_connect&action=listEtudiant&id=<?=$value["id_classe"]?>"><button class="butte">Listes etudiants</button></a> </td>
                             <?php endif; ?>
                         </tr>
                       </tbody>
