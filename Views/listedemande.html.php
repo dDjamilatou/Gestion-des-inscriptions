@@ -1,15 +1,14 @@
 <div class="box33">
 <?php if ($_SESSION["Connexion"]["nom_role"]=="ETUDIANT") : ?>
     <form class="forme11" action="<?=WEBROOT;?>" method="post">
-        <!-- <label  style="margin-left: 3%;">Etat</label> -->
             <select class="selectEtat11" name="annee" id="">
-                <option value="All">Les demandes de l’année:  2022-2023</option>
+                <option value="All">Toutes les demandes effectuées</option>
                 <?php foreach($annees as $value):?>
-                    <option value="<?=$value["nom_annee"]?>">Les demandes de l’année: <?=$value["nom_annee"]?></option>
+                    <option value="<?=$value["nom_annee"]?>" <?php if($value["nom_annee"]==$_SESSION["annee"]) echo 'selected';?>>Les demandes de l’année: <?=$value["nom_annee"]?></option>
                 <?php endforeach;?>
             </select>
             <input type="hidden" name="controller" value="user_connect">
-            <button class="bout11" type="submit" name="action" value="2">OK</button>
+            <button class="bout11" type="submit" name="action" value="mesDemandes">OK</button>
     </form>
     <?php endif; ?>
         <div class="forme3_title">

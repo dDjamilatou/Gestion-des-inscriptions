@@ -1,10 +1,13 @@
 <?php
-function DemandeAnneeEncours(int $idEtudiant, string $etat):array|null{
+function DemandeAnneeEncours(int $idEtudiant,string $annee, string $etat):array|null{
       //  requete parametree
 $sql="SELECT * FROM `demande`d,`inscription` i,`anneescolaire`a 
       WHERE d.`id_inscri`=i.`id_inscri`AND i.`id_annee`=a.`id_annee`
-      AND a.`etat_annee`=1 AND i.`id_user`=$idEtudiant ";
-if ($etat!="All") {
+      AND i.`id_user`=$idEtudiant ";
+if ($annee!="All") {
+     $sql.= " and nom_annee like '$annee' ";
+}
+elseif ($etat!="All") {
      $sql.= " and etat like '$etat' ";
 }
 $data=null;

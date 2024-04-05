@@ -16,9 +16,11 @@ if (isset($_REQUEST["action"])) {
         LoadView("Accueil.html.php", ["Effectifs"=>$Effectifs]);
     }
     elseif($_REQUEST["action"]=="mesDemandes"){
+        $annee=isset($_REQUEST["annee"])? $_REQUEST["annee"]:"All";
+        $_SESSION["annee"]=$annee;
         $etat=isset($_REQUEST["etat"])? $_REQUEST["etat"]:"All";
         $_SESSION["etat"]=$etat;
-        $MesDemandes= DemandeAnneeEncours($_SESSION["Connexion"]["id_user"], $etat);
+        $MesDemandes= DemandeAnneeEncours($_SESSION["Connexion"]["id_user"], $annee, $etat);
         LoadView("listedemande.html.php", 
         [
             "MesDemandes"=>$MesDemandes, 
