@@ -14,12 +14,14 @@
                 <div>
                     <label for="">Motif</label><br>
                     <textarea type="text" name="motif" class="put"></textarea><br>
-                    <div class="text-danger"><?= isset($errors['motif'])?$errors['motif']:""; ?></div>
                 </div>
                 <div> 
-                    <label for="">Date</label><br>
-                    <input type="date" name="date"><br>
-                    <div class="text-danger"><?= isset($errors['date'])?$errors['date']:""; ?></div>
+                    <label for="">Type</label><br>
+                    <select name="type" id="">
+                            <?php foreach($types as $value):?>
+                               <option value="<?=$value["type"]?>" ><?=$value["type"]?></option>
+                            <?php endforeach;?>
+                    </select>
                 </div>
         
               <input type="hidden" name="controller" value="user_connect">

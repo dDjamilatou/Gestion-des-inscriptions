@@ -39,6 +39,7 @@
                     <tr>
                     <?php if ($_SESSION["Connexion"]["nom_role"]=="ETUDIANT") : ?>
                         <th>Motif demande</th>
+                        <th>Type demande</th>
                         <th>Date demande</th>
                         <th>Etat demande</th>
                     <?php endif; ?>
@@ -54,6 +55,7 @@
                     <tbody>
                         <tr>
                             <td><?= $value["motif"]?></td>
+                            <td><?= $value["type"]?></td>
                             <td><?= $value["date"]?></td>
                             <td><?= $value["etat"]?></td>
                         </tr>

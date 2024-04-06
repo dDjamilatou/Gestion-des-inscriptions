@@ -32,6 +32,18 @@ if (isset($_REQUEST["action"])) {
     //     $Demandes=DemandeAnneeEncours();
     //     LoadView("listedemande.html.php", ["Demandes"=>$Demandes]);
     // }
+    elseif($_REQUEST["action"]=="add-demande"){
+        // Traitement ajout de la demande
+         $newDemande=[
+            "typed"=>$_REQUEST["type"],
+            "dated"=>date("Y-m-d"),
+            "etat"=>"En attente",
+            "motif"=>$_POST["motif"],
+            "id_inscri"=>$_SESSION["etudiantConnect"]["id_inscri"]
+         ];
+         addDemande($newDemande);
+         header("location:".WEBROOT."/??controller=user_connect&action=mesDemandes");
+    }
     elseif($_REQUEST["action"]=="eff4"){
         $EffectifsPartype=FindEffectifsSuspenduAnnule();
         LoadView("eff4.html.php", ["EffectifsPartype"=> $EffectifsPartype]);
@@ -71,7 +83,7 @@ if (isset($_REQUEST["action"])) {
         LoadView("listeEtudiant.html.php", ["listEtudiant"=>$listEtudiant]);
     }
     elseif ($_REQUEST["action"] == "soumettre"){
-        LoadView("soumettre.html.php");
+        LoadView("soumettre.html.php", ["types"=>FindTypeDemande()]);
     }
     elseif ($_REQUEST["action"] == "add-demande") {
         // $errors = [];
